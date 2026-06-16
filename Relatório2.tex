@@ -30,7 +30,7 @@
 \begin{center}
     {\LARGE MC521 - Relatório II} \\ [2,5em]
     {\large Júlio da Silva Telles} \\ [1,0em]
-    {\large 12 de Julho de 2026} \\ [1,5em]
+    {\large 16 de Julho de 2026} \\ [1,5em]
 \end{center}
 
 \vspace{1cm} 
@@ -63,5 +63,34 @@ Vamos utilizar um algorimtmo de DSU para resolver esse problema. O algoritmo rea
 \end{itemize}
 
 Após todas as uniões e retornamos a ordem especifica de impressão guardada na lista encadeada.
+
+\section{F - Roads not only in Berland (CodeForces - 25D)}
+
+No problema F o prefeito da cidade de Berland busca conectar Berland a todas as cidades proximas, por meio da construção de estradas novas conectando Berland ás demais, no lugar de estradas velhas que são desnecessaria. Nesse problema e dado um grafo não direcionado não conexo no qual o objetivo é criar o minimo de arestas necessárias para conectar a componente contendo o vertice 1, Berland.
+No entanto a cada nova aresta construida é necessário eliminar uma aresta antiga que não afete o grau de conectividade do grafo. A saida esperada é composta pelo numero minimo de arestas novas necessárias para que o grafo se torne conexo, e o plano para que isso ocorra, a cada linha de aresta nova que precisa ser feita e necessario imprimir os vertices que compõem essa aresta, e uma aresta
+que foi removida.
+
+\subsection{Solução}
+
+Vamos utilizar um algoritmo de DSU para resolver o problema. Tome inicalmente cada vertice do grafo como um conjunto unitário, e a cada aresta nova adicionada nesse grafo realizamos a união desses dois conjuntos (vertices) chamando o metodo \texttt{unionSet()}, caso esses dois vertices estejam no mesmo conjunto (componente) a aresta é colocada em um \texttt{Vector<pair<int, int>>} de arestas não
+necessárias. Após a contrução inicial das componentes e da lista de arestas descartaveis, a resposta será o número de novas arestas, que será igual ao numero de conjuntos disjuntos -1 (conjunto que contém o vértice 1). Posteriomente fazemos um laço sobre todos os vértices do grafo, e verificamos se eles estão conectados ao conjunto contendo o vertice 1, caso contrario unimos ele à componente do
+vertice 1 e então imprimimos a nova aresta seguida de uma das arestas não utilizadas e em seguida removemos essa aresta não utilzada da lista. A função abaixo implementa a logica de conexão de arestas novas e remoção de arestas descartaveis.
+
+\vspace{0.5em}
+
+\begin{lstlisting}[language=C++]
+    void printRoads(){
+        int i = 2;
+        while (sz(unUsed) != 0){
+            if (!isSameSet(1, i)){
+                unionSet(1, i);
+                ii old_road = unUsed[sz(unUsed) - 1];
+                unUsed.PP();
+                cout << old_road.first << ' ' << old_road.second << ' ' << 1 << ' ' << i << '\n';
+            }
+            i++;
+        }
+    }
+\end{lstlisting}
 
 \end{document}  
