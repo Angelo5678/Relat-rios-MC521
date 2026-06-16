@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório II} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 16 de Julho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{G - Vapor Pressure (AtCoder - past202107\_b)}
+
+O problema G, nos da 3 valores distintos $A$, $B$ e $C$ e pede como resposta qual o valor que $A$ deve adquirir tal que,
+$C \times B \geq A$, dividido por B.
+
+\subsection{Solução}
+
+A solução desse exercicio pode ser partida em 2 casos:
+
+\begin{itemize}
+    \item $A \geq B \times C$: Nesse caso o maior valor que $A$ poderá adquirir será $B \times C$, portanto a resposta será $\frac{B \times C}{B}$ que é apenas $C$.
+    \item $A \le B \times C$: Nesse caso a resposta é apenas $A / B$.
+\end{itemize}
+
+\section{E - Precontidion (AtCoder - abc412\_b )}
+
+No problema E são dadas duas strings $S$ e $T$, a resposta  para o problema é se a string $S$ cumpre a condição abaixo:
+
+\begin{itemize}
+    \item Toda letra maiúscula em $S$, que não esteja no começo da string deve ser immediatamente precedida por um carcter contido na string $T$.
+\end{itemize}
+
+\subsection{Solução}
+
+Para resolver esse problema é necessário somente que iteremos sobre todos os indices $i$ de $S$ e a cada vez que encontramos uma letra maiúscula devemos
+checar se o carcterer anterior está contido em $T$, para tornar isso mais rápido guardamos todos oc carcteres que aparecem em $T$ em um \texttt{unorderedSet<int>}
+que permite a checagem se um elemento existe em $T$ em $\mathcal{O}(1)$.
+
+\end{document}
