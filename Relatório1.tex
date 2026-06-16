@@ -1,0 +1,122 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório I} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 12 de Julho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{F - P06 (AtCoder - abc251\_d)}
+
+O problema F descreve uma situação em que dado um inteiro $w$ tal que $1 \le w \le 10^6$ e necessario encontrar uma
+familia de elementos descrita como $W = \{ w_i \in \mathbb{Z} \}_{i \in I} \text{ com } 1 \le|I|
+\le 300, \text{ tal que } \forall n \in \mathbb{Z} \cap (1, w), \, \exists A \subseteq I 
+\text{ t.q. } 1 \le |A| \le 3 \text{ e } n = \sum_{a \in A} w_a$. 
+
+\subsection{Solução}
+
+Como w não pode ser maior que $10^6$ e não existe limitações adicionais ao problema podemos apenas formar uma solução para $10^6$ 
+que será viavel para todos os possiveis valores de $w$. Tendo isso em mente dividimos o a familia em tres secções de $100$ elementos cada,
+descritos como:
+\begin{align*}
+W_1 &= \{ i \cdot 100^0 \mid i \in \mathbb{Z}, \, 1 \le i \le 100 \} \\
+W_2 &= \{ i \cdot 100^1 \mid i \in \mathbb{Z}, \, 1 \le i \le 100 \} \\
+W_3 &= \{ i \cdot 100^2 \mid i \in \mathbb{Z}, \, 1 \le i \le 100 \}
+\end{align*}
+
+Assim para qualquer inteiro $1 \le w \le 10^6$ temos 3 casos:
+
+\begin{itemize}
+    \item [a)] se $1 \le w \le 10^2$, para todo $w$ podemos formá-lo utilizando apenas um elemento do conjunto $W_1$.
+    
+    \item [b)] se $10^2 < w \le 10^4$, podemos formar $w$ somando exatamente dois elementos: um pertencente a $W_1$ 
+    representando as duas primeiras casas decimais e outro a representando as ultimas duas $W_2$.
+    
+    \item [c)] se $10^4 < w \le 10^6$, podemos formar $w$ somando exatamente três elementos distintos: um de $W_1$, 
+    um de $W_2$ e um de $W_3$ com o terceiro representando as duas ultimas casas decimais expandindo do ultimo caso.
+\end{itemize}
+
+Desse modo, e necessário apenas que para todo $w$ a resposta seja a união entre $W_1$, $W_2$ e $W_3$. 
+
+\section{G - P07 (AtCoder - abc249\_d)}
+
+O problema nos da uma sequência de inteiros $A = (A_1$,\dots,$A_N)$ de tamanho N, e pede como resposta o numero de triplas de indices ($i$,$j$,$k$)
+que satisfaçam as seguintes condições:
+\begin{itemize}
+    \item $1 \le i$,$j$,$k \le N $
+    \item $\frac{A_i}{A_j} = A_k$ 
+    \item $1 \le N \le 2 \times 10^5$
+    \item $1 \le A_i \le 2 \times 10^5 \ (1 \le i \le N)$
+\end{itemize} 
+
+\subsection{Solução}
+
+Vamos resolver esse problema usando combinatoria, para isto primeiro precisamos rearranjar todos os $A_i$ da sequencia em um \textit{Heat-map} de tamanho
+$K = 2 \times 10^5 + 1$ assim podemos guardar o numero de ocorrencias de cada numero da sequencia e teremos uma variavel \textit{max} que guarda qual é o maior
+numero da sequencia, ademais devemos manipular a expressão $\frac{A_i}{A_j} = A_k$ para $A_i = A_j \times A_k$ para facilitar o trabalho de encontrar as triplas. 
+Tendo esse \textit{Heat-map} que, relaciona o indice do Array com o numero de ocorrencias daquele índice na sequência, podemos encontrar para todo inteiro $i$ nessa 
+sêquencia o numero de triplas de indices que o envolvem e satisfazem as condições estabelecidas, utilizando um \textit{for} sobre todos os indices a partir do i escolhido até que
+$i \times j$ seja maior que \textit{max + 1}, multiplicando as ocorrencias dos indices $i$,$j$ e $i \times j$ 
+(que nessa contrução são os numeros dos indices correspondentes a $j,k,i$ respectivamente)
+
+\vspace{0.5cm} 
+
+\begin{lstlisting}[language=C++]
+for (int i = 1; i < max + 1; i++){
+    for (int j = i; j * i < max + 1; j++){
+        /* O if abaixo verifica se os indices sao distintos
+           e multiplicando a resposta por 2, contando a possivel
+           permutacao de indices na multiplicacao da tripla */
+        if (i != j) res += (o[i] * o[j] * o[i * j]) * 2; 
+        else res += o[i] * o[j] * o[i * j];
+    }
+}
+\end{lstlisting}
+
+\subsection{Análise de Complexidade}
+
+Seja $N = max$. O laço externo itera sobre a variável $i$ de $1$ até $N$. Para cada valor de $i$, o laço interno itera sobre a variável $j$ começando de $i$ enquanto a condição $i \times j \le N$ for verdadeira. Isso implica que, para um dado $i$, o laço interno executa no máximo $\frac{N}{i}$ vezes.
+
+Para determinar o número total de iterações, devemos somar as execuções do laço interno para todos os possíveis valores do laço externo:
+
+$$ \sum_{i=1}^{N} \frac{N}{i} = N \sum_{i=1}^{N} \frac{1}{i} $$
+
+Sabemos que o somatório $\sum_{i=1}^{N} \frac{1}{i}$ representa a série harmônica, cuja soma diverge logaritmicamente. Podemos aproximá-la da seguinte forma:
+
+$$ \sum_{i=1}^{N} \frac{1}{i} \approx \log N $$
+
+Substituindo essa aproximação na nossa equação original, concluímos que o número de operações é proporcional a:
+
+$$ N \log N $$
+
+Portanto, a complexidade de tempo do algoritmo é limitada por $\mathcal{O}(N \log N)$, tornando a execução viável para a densidade de dados apresentados pelo problema.
+
+\end{document}
