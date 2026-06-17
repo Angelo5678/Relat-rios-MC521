@@ -1,11 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1781737294.2553 "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" "Relatório4.pdf" "Relatório4" 1781737294.63379 0
+["pdflatex"] 1781737780.50671 "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" "Relatório4.pdf" "Relatório4" 1781737780.89121 0
   "/etc/texmf/web2c/texmf.cnf" 1774023749.27586 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" 1781737294.02979 2320 e96bf95796746324ca5e63a5d810c95c ""
+  "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" 1781737780.28212 3671 cf812bba6d99144f7518a649e11b60ce ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1136768653 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1136768653 3584 3169d30142b88a27d4ab0e3468e963a2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1136768653 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
@@ -83,8 +85,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774023769 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774023824 3347913 a3a4cdcda61affdc186af823ac29dc86 ""
-  "Relatório4.aux" 1781737294.60285 389 75d20a336c13af53068c33b0fff0ca88 "pdflatex"
-  "Relatório4.tex" 1781737294.02979 2320 e96bf95796746324ca5e63a5d810c95c ""
+  "Relatório4.aux" 1781737780.85812 627 e0695b518ed6dfd313cf9a53a51f238b "pdflatex"
+  "Relatório4.tex" 1781737780.28212 3671 cf812bba6d99144f7518a649e11b60ce ""
   (generated)
   "Relatório4.aux"
   "Relatório4.log"

@@ -54,4 +54,19 @@ Como o domínio de $x$ é restrito ao intervalo $[0, 1]$, podemos utilizar o \te
     \item \textbf{Condição de Parada:} Como estamos lidando com números de ponto flutuante, o algoritmo repete o processo de divisão até que o tamanho do intervalo seja menor que uma tolerância aceitável (neste caso, utilizamos um erro de $\approx 10^{-10}$ para garantir a precisão exigida de 4 casas decimais).
 \end{enumerate}
 
+\section{K - K-th Not Divisible by n (CodeForces - 1352C)}
+
+O problema consiste em encontrar o $k$-ésimo número inteiro positivo que não seja divisível por um dado inteiro $n$. 
+
+\subsection{Solução}
+
+Podemos resolver o problema em complexidade $\mathcal{O}(1)$ utilizando matemática simples, observando o padrão dos números:
+
+\begin{enumerate}
+    \item \textbf{Padrão de Blocos:} Os números podem ser agrupados em blocos de tamanho $n$. Em cada bloco de $n$ números, os primeiros $n-1$ números não são divisíveis por $n$ (são os números que queremos), e o último número sempre é um múltiplo de $n$ (o número que queremos pular).
+    
+    \item \textbf{Cálculo de Múltiplos Pulados:} Para chegar ao $k$-ésimo número válido, precisamos descobrir quantos blocos de $n-1$ elementos nós completamos ou iniciamos. A quantidade de blocos acessados é dada pelo teto da divisão de $k$ por $(n-1)$, ou seja, $i = \lceil \frac{k}{n-1} \rceil$.
+    
+    \item \textbf{Encontrando o Valor Final:} A quantidade exata de números divisíveis por $n$ que ficaram para trás e precisamos pular é exatamente $i - 1$. Portanto, o nosso resultado procurado será o próprio valor de $k$ somado à quantidade de números inválidos que tivemos que pular no caminho, resultando na fórmula final: $\text{res} = k + i - 1$.
+\end{enumerate}
 \end{document}
