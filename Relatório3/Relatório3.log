@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.20)  16 JUN 2026 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.20)  17 JUN 2026 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/angelo/MC521/Relat-rios-MC521/Relatório3.tex
-(/home/angelo/MC521/Relat-rios-MC521/Relatório3.tex
+**/home/angelo/MC521/Relat-rios-MC521/Relatório3/Relatório3.tex
+(/home/angelo/MC521/Relat-rios-MC521/Relatório3/Relatório3.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -287,14 +287,14 @@ L3 programming layer <2025-01-18>
  ) 
 Here is how much of TeX's memory you used:
  6291 strings out of 473197
- 93930 string characters out of 5718605
+ 93966 string characters out of 5718605
  508802 words of memory out of 5000000
  29482 multiletter control sequences out of 15000+600000
  568756 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,263b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,65p,275b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on Relatório3.pdf (1 page, 137142 bytes).
+Output written on Relatório3.pdf (1 page, 137285 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream

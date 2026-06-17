@@ -34,3 +34,24 @@
 \end{center}
 
 \vspace{1cm} 
+
+\section{A - Solve It (UVA - 10341)}
+
+O problema consiste em encontrar a raiz da função contínua $f(x)$, onde:
+\begin{center}
+$f(x) = p * e^{-x} + q * \sin(x) + r * \cos(x) + s * \tan(x) + t * x^2 + u$
+\end{center}
+
+\subsection{Solução}
+
+Como o domínio de $x$ é restrito ao intervalo $[0, 1]$, podemos utilizar o \textbf{Método da Bisseção} (uma adaptação da busca binária para funções contínuas). O algoritmo segue os seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Verificação de Existência:} Pelo Teorema de Bolzano, como a função é contínua, só existirá uma raiz no intervalo se $f(0)$ e $f(1)$ tiverem sinais opostos. Calculamos ambos os valores; se possuírem o mesmo sinal (ambos positivos ou ambos negativos), podemos afirmar com segurança que a equação não possui solução e imprimimos \texttt{"No solution"}.
+    
+    \item \textbf{Busca da Raiz:} Caso exista uma solução, inicializamos nossos limites como $a = 0$ e $b = 1$. Em cada iteração, calculamos o ponto médio $m = \frac{a + b}{2}$ e avaliamos $f(m)$. Dependendo do sinal de $f(m)$, substituímos o limite $a$ ou $b$ por $m$, reduzindo o intervalo de busca pela metade a cada passo.
+    
+    \item \textbf{Condição de Parada:} Como estamos lidando com números de ponto flutuante, o algoritmo repete o processo de divisão até que o tamanho do intervalo seja menor que uma tolerância aceitável (neste caso, utilizamos um erro de $\approx 10^{-10}$ para garantir a precisão exigida de 4 casas decimais).
+\end{enumerate}
+
+\end{document}

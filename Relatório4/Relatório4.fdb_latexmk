@@ -1,8 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1781735506.81128 "/home/angelo/MC521/Relat-rios-MC521/Relatório3/Relatório3.tex" "Relatório3.pdf" "Relatório3" 1781735507.38692 0
+["pdflatex"] 1781737294.2553 "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" "Relatório4.pdf" "Relatório4" 1781737294.63379 0
   "/etc/texmf/web2c/texmf.cnf" 1774023749.27586 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/angelo/MC521/Relat-rios-MC521/Relatório3/Relatório3.tex" 1781735506.56126 2126 2c9ed25ae3134a5f2f3b09bd52c7b6a8 ""
+  "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" 1781737294.02979 2320 e96bf95796746324ca5e63a5d810c95c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1136768653 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -10,7 +11,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1136768653 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2074.tfm" 1136768653 3584 8e2870ec7aa9776f59654942b0923f51 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm" 1136768653 1536 487c9b46984a816c7ed238d0674595c7 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -30,6 +30,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -72,7 +73,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1636152094 2971 def0b6c1f0b107b3b936def894055589 ""
-  "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb" 1774023760.70829 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb" 1774023760.70929 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb" 1774023760.71029 139826 9213617a7cb78635fc326b859c0b2273 ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1774023760.81713 136101 f533469f523533d38317ab5729d00c8a ""
@@ -82,10 +83,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774023769 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774023824 3347913 a3a4cdcda61affdc186af823ac29dc86 ""
-  "Relatório3.aux" 1781735507.35321 636 955fc2d679b55551016315455d61827e "pdflatex"
-  "Relatório3.tex" 1781735506.56126 2126 2c9ed25ae3134a5f2f3b09bd52c7b6a8 ""
+  "Relatório4.aux" 1781737294.60285 389 75d20a336c13af53068c33b0fff0ca88 "pdflatex"
+  "Relatório4.tex" 1781737294.02979 2320 e96bf95796746324ca5e63a5d810c95c ""
   (generated)
-  "Relatório3.aux"
-  "Relatório3.log"
-  "Relatório3.pdf"
+  "Relatório4.aux"
+  "Relatório4.log"
+  "Relatório4.pdf"
   (rewritten before read)
