@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório VI} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 20 de Junho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{I - MCM (Aizu - ALDS1\_10\_B)}
+O problema consiste em encontrar o número mínimo de multiplicações escalares necessárias para computar o produto de uma cadeia de $N$ matrizes.
+
+\subsection{Solução}
+Podemos resolver este problema utilizando Programação Dinâmica (DP) em um formato \textit{Bottom-Up}, com complexidade de tempo de $\mathcal{O}(N^3)$. O algoritmo segue os seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Inicialização do Estado:} Preenchemos a diagonal principal da nossa matriz de custos \texttt{m} com zeros (\texttt{m[i][i] = 0}), pois o custo de multiplicar uma única matriz (sem outras matrizes para multiplicar) é nulo.
+    \item \textbf{Iteração por Subcadeias:} Calculamos as respostas para cadeias de matrizes cada vez maiores. O loop mais externo \texttt{u} define o tamanho da subcadeia analisada, enquanto o loop \texttt{i} define onde essa subcadeia começa, determinando também o índice final $j$.
+    \item \textbf{Otimização do Ponto de Corte:} Para o intervalo de matrizes de $i$ a $j$, testamos todos os pontos de quebra possíveis $k$. Calculamos o custo da operação como a soma do custo ótimo da metade esquerda, da metade direita, e o custo final de multiplicar as duas matrizes resultantes (\texttt{d[i] * d[k + 1] * d[j + 1]}). Atualizamos a resposta \texttt{m[i][j]} com o menor custo obtido.
+\end{enumerate}
+
+\section{D - Clear the String (CodeForces - 1132F)}
+O problema consiste em encontrar o número mínimo de operações necessárias para apagar uma string inteira, sabendo que em cada operação podemos remover uma substring contígua de caracteres idênticos.
+
+\subsection{Solução}
+Podemos modelar o problema com Programação Dinâmica em intervalos (\textit{Interval DP}) utilizando a abordagem \textit{Top-Down} com \textit{Memoization}, resultando em uma complexidade de tempo de $\mathcal{O}(N^3)$. O algoritmo segue os seguintes passos:
+
+\begin{enumerate}
+\item \textbf{Compressão da String:} Ao ler a string original, ignoramos e não armazenamos letras adjacentes iguais na nova variável \texttt{s} (por exemplo, "aab" vira "ab"). Isso simplifica a DP, já que apagar "aa" de uma vez tem o mesmo custo e regra que apagar apenas "a".
+    \item \textbf{Interval DP (\textit{Memoization}):} A função recursiva \texttt{clear(l, r)} retorna o custo mínimo para esvaziar o intervalo entre os índices $l$ e $r$. Usamos as matrizes \texttt{visited} e \texttt{memo} para guardar os resultados de subproblemas já resolvidos e evitar recálculos. Se o índice da esquerda passar o da direita ($l > r$), a base da recursão retorna 0.
+    \item \textbf{Transição de Estados:} Para qualquer intervalo analisado, assumimos inicialmente a pior hipótese: deletar o caractere mais à esquerda isoladamente, custando $1 + \text{clear}(l+1, r)$. Em seguida, iteramos no restante do intervalo buscando algum caractere no índice \texttt{i} idêntico ao inicial (\texttt{s[l] == s[i]}). Se houver igualdade, calculamos o custo de apagar o "miolo" (\texttt{clear(l+1, i-1)}) para juntar os caracteres iguais, somado ao custo do restante do grupo fundido (\texttt{clear(i, r)}). Retornamos o mínimo entre todas as possibilidades.
+\end{enumerate}
+
+\end{document}
