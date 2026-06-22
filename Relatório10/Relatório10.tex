@@ -36,19 +36,6 @@
 
 \vspace{1cm} 
 
-\section{Road Construction (Aizu - 2249)}
-O problema descreve a necessidade de reconstruir as estradas de um país partindo da capital (cidade 1) para todas as outras cidades, mantendo a distância mínima original entre a capital e cada cidade. Como cada estrada possui um custo de construção, o objetivo é selecionar um subconjunto de estradas que satisfaça a condição das distâncias mínimas e, ao mesmo tempo, minimize o custo total da obra.
-
-\subsection{Solução}
-Este problema exige uma variação do Algoritmo de Dijkstra para encontrar a Árvore de Caminhos Mínimos (\textit{Shortest Path Tree}), ponderando pelo custo em caso de empates. A complexidade de tempo é de $\mathcal{O}(M \log N)$, onde $M$ é o número de estradas e $N$ o número de cidades. O algoritmo segue os passos:
-
-\begin{enumerate}
-    \item \textbf{Cálculo das Distâncias Mínimas:} Primeiro, executamos o algoritmo de Dijkstra tradicional partindo da capital (nó 1) utilizando exclusivamente as \textit{distâncias} como peso das arestas. Isso preenche o vetor \texttt{dist} com a distância mínima exata da capital para cada cidade do país.
-    \item \textbf{Otimização de Custos (Tie-breaking):} Após conhecer a distância ótima para cada cidade, precisamos escolher qual estrada construir para conectá-la à malha. Iteramos sobre cada cidade $i$ (de $2$ até $N$) e analisamos todas as suas estradas adjacentes.
-    \item \textbf{Seleção da Aresta:} Para cada vizinho $v$, verificamos se a estrada pertence a um caminho mínimo válido através da equação \texttt{dist[v] + peso == dist[i]}. Caso seja uma estrada válida, atualizamos o menor custo de construção necessário para conectar a cidade $i$ (\texttt{min\_cost}). Por fim, somamos esse menor custo à variável \texttt{total}.
-\end{enumerate}
-
-\newpage
 
 \section{Dijkstra? (CodeForces - 20C)}
 O problema pede explicitamente para encontrar o caminho mais curto entre o vértice $1$ e o vértice $N$ em um grafo ponderado e não-direcionado. O diferencial prático é que não basta apenas calcular a distância final: é necessário recuperar e imprimir a sequência exata de vértices que compõem esse caminho.
@@ -60,6 +47,20 @@ A solução baseia-se no Algoritmo de Dijkstra aliado a um vetor de rastreamento
     \item \textbf{Exploração do Grafo:} Utilizamos o Dijkstra padrão auxiliado por uma fila de prioridades (\texttt{priority\_queue}) orientada a valores mínimos (\texttt{greater<ii>}), extraindo sempre o nó com a menor distância acumulada.
     \item \textbf{Rastreamento (Predecessores):} Criamos um vetor \texttt{pred} inicializado com $-1$. Sempre que encontramos um caminho mais curto para um nó vizinho (\texttt{v.first}) passando pelo nó atual (\texttt{u}), atualizamos a distância mínima e salvamos a informação de que "viemos de $u$" fazendo \texttt{pred[v.first] = u}.
     \item \textbf{Reconstrução do Caminho:} Após o fim do algoritmo, checamos se o vértice $N$ foi alcançado (\texttt{dist[n] != INF}). Se sim, utilizamos a função recursiva \texttt{print\_path} para percorrer o vetor \texttt{pred} de trás para frente (começando em $N$ e indo até o $1$). A recursão garante que os nós sejam impressos na ordem correta da origem ao destino. Se $N$ for inalcançável, imprime-se $-1$.
+\end{enumerate}
+
+\newpage
+
+\section{Road Construction (Aizu - 2249)}
+O problema descreve a necessidade de reconstruir as estradas de um país partindo da capital (cidade 1) para todas as outras cidades, mantendo a distância mínima original entre a capital e cada cidade. Como cada estrada possui um custo de construção, o objetivo é selecionar um subconjunto de estradas que satisfaça a condição das distâncias mínimas e, ao mesmo tempo, minimize o custo total da obra.
+
+\subsection{Solução}
+Este problema exige uma variação do Algoritmo de Dijkstra para encontrar a Árvore de Caminhos Mínimos (\textit{Shortest Path Tree}), ponderando pelo custo em caso de empates. A complexidade de tempo é de $\mathcal{O}(M \log N)$, onde $M$ é o número de estradas e $N$ o número de cidades. O algoritmo segue os passos:
+
+\begin{enumerate}
+    \item \textbf{Cálculo das Distâncias Mínimas:} Primeiro, executamos o algoritmo de Dijkstra tradicional partindo da capital (nó 1) utilizando exclusivamente as \textit{distâncias} como peso das arestas. Isso preenche o vetor \texttt{dist} com a distância mínima exata da capital para cada cidade do país.
+    \item \textbf{Otimização de Custos (Tie-breaking):} Após conhecer a distância ótima para cada cidade, precisamos escolher qual estrada construir para conectá-la à malha. Iteramos sobre cada cidade $i$ (de $2$ até $N$) e analisamos todas as suas estradas adjacentes.
+    \item \textbf{Seleção da Aresta:} Para cada vizinho $v$, verificamos se a estrada pertence a um caminho mínimo válido através da equação \texttt{dist[v] + peso == dist[i]}. Caso seja uma estrada válida, atualizamos o menor custo de construção necessário para conectar a cidade $i$ (\texttt{min\_cost}). Por fim, somamos esse menor custo à variável \texttt{total}.
 \end{enumerate}
 
 \end{document}
