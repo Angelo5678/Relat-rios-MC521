@@ -1,0 +1,64 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório IX} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 22 de Junho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{Course Schedule (CSES - 1679)}
+O problema exige a elaboração de um cronograma válido para concluir $N$ cursos. São dadas $M$ restrições na forma de pré-requisitos, indicando que um curso $A$ deve ser obrigatoriamente concluído antes de um curso $B$. Caso seja impossível completar todos os cursos devido a dependências circulares, o programa deve acusar a impossibilidade.
+
+\subsection{Solução}
+O problema pode ser modelado como a busca por uma Ordenação Topológica (\textit{Topological Sort}) em um Grafo Direcionado. A solução implementada alcança uma complexidade de tempo de $\mathcal{O}(V + E)$ e opera através dos seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Modelagem do Grafo Invertido:} Durante a leitura da entrada, construímos o grafo invertendo a direção das arestas (\texttt{graph[v].PB(u)} em vez do tradicional $u \to v$). Essa estratégia dispensa a necessidade de inverter o vetor resposta ao final, já que a busca em profundidade preencherá os nós na ordem correta nativamente.
+    \item \textbf{Busca em Profundidade (DFS):} Iteramos sobre todos os nós do grafo. Se um nó ainda não foi visitado, iniciamos uma rotina recursiva de \texttt{dfs}. Cada curso finalizado pela recursão (quando todas as suas dependências foram resolvidas) é adicionado ao vetor \texttt{path}.
+    \item \textbf{Detecção de Ciclos:} Utilizamos um conjunto (\texttt{std::set<int> s}) para simular a pilha de recursão e rastrear os ancestrais do caminho atual. Ao visitar um vizinho, se ele já estiver contido em \texttt{s}, descobrimos uma "aresta de retorno" (\textit{back-edge}), comprovando a existência de um ciclo. Nesse cenário, a flag \texttt{found} é definida como falsa e a resposta passa a ser \texttt{IMPOSSIBLE}.
+\end{enumerate}
+
+\newpage
+
+\section{Game Routes (CSES - 1681)}
+O cenário descreve um jogo com $N$ níveis e $M$ teletransportes unidirecionais entre eles. O objetivo é calcular o número total de rotas distintas possíveis começando do nível $1$ e terminando no nível $N$. Por conta da quantidade potencialmente colossal de rotas, a resposta final deve ser expressa em módulo $10^9 + 7$.
+
+\subsection{Solução}
+Podemos resolver este problema aplicando Programação Dinâmica sobre um Grafo Direcionado Acíclico (DP em DAG), utilizando uma abordagem \textit{Top-Down} (\textit{Memoization}). A complexidade resultante é linear em relação ao tamanho do grafo, $\mathcal{O}(V + E)$. A execução transcorre da seguinte forma:
+
+\begin{enumerate}
+    \item \textbf{Estado e Recursão:} A função recursiva \texttt{dfs} objetiva retornar quantas maneiras existem de ir do nó \texttt{u} atual até o nó de destino \texttt{n}. Se atingirmos o alvo (\texttt{u == n}), a base da recursão atua e retornamos o valor $1$, que representa o término com sucesso de uma rota.
+    \item \textbf{Memoização:} Para evitar recalcular caminhos repetidos, o vetor de estados \texttt{p} guarda o número de rotas válidas computadas a partir daquele nó. Da mesma forma, o vetor \texttt{v} funciona como uma máscara de visitados tradicionais da DFS. Se um vizinho já foi processado no passado (\texttt{p[w] > 0}), seu valor acumulado é simplesmente somado em tempo constate.
+\end{enumerate}
+
+\end{document}

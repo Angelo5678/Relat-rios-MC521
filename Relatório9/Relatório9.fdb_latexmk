@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1782150280.63012 "/home/angelo/MC521/Relat-rios-MC521/Relatório8/Relatório.tex" "Relatório.pdf" "Relatório" 1782150281.35611 0
+["pdflatex"] 1782151146.48562 "/home/angelo/MC521/Relat-rios-MC521/Relatório9/Relatório9.tex" "Relatório9.pdf" "Relatório9" 1782151146.95565 0
   "/etc/texmf/web2c/texmf.cnf" 1774023749.27586 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/angelo/MC521/Relat-rios-MC521/Relatório8/Relatório.tex" 1782150279.43671 4200 a85c24c8c7d6c67d82d7a2f8616763a0 ""
+  "/home/angelo/MC521/Relat-rios-MC521/Relatório9/Relatório9.tex" 1782151146.24685 4070 31775a1607ecc01852eada2400edd9ea ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -71,6 +71,7 @@
   "/usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb" 1254269338 30696 2654571912f9cd384da9f7cb8a60c568 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmr12.pfb" 1255129361 113634 f99c44d58bae0863375faf0e1d74d612 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmr17.pfb" 1255129361 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
+  "/usr/share/texmf/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmri12.pfb" 1255129361 109265 32320cb6133d4d76bf83e27b5eb4009b ""
   "/usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
   "/usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb" 1255129361 110323 92daea7ca7b4120bd2b54b047c93be27 ""
@@ -84,10 +85,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1781739675 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1781739802 3346435 7e2b90b05f04f29e47b31faade5a16c8 ""
-  "Relatório.aux" 1782150281.27694 639 ceab17b35c9a2ece9fb21381216ede1c "pdflatex"
-  "Relatório.tex" 1782150279.43671 4200 a85c24c8c7d6c67d82d7a2f8616763a0 ""
+  "Relatório9.aux" 1782151146.92356 607 d8c67e358a84617c1210f7c5cc817f80 "pdflatex"
+  "Relatório9.tex" 1782151146.24685 4070 31775a1607ecc01852eada2400edd9ea ""
   (generated)
-  "Relatório.aux"
-  "Relatório.log"
-  "Relatório.pdf"
+  "Relatório9.aux"
+  "Relatório9.log"
+  "Relatório9.pdf"
   (rewritten before read)
