@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório VIII} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 22 de Junho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{Tasks and Deadlines (CSES - 1630)}
+O problema propõe um cenário com $N$ tarefas a serem processadas. Cada tarefa possui uma duração específica e um prazo final (deadline). A recompensa obtida ao finalizar uma tarefa é calculada subtraindo o tempo em que ela foi concluída de seu prazo final. O objetivo é determinar a ordem de execução das tarefas que maximize a recompensa total acumulada.
+
+\subsection{Solução}
+Este problema pode ser resolvido de forma eficiente utilizando um Algoritmo Guloso (\textit{Greedy Algorithm}). A lógica fundamental é que processar tarefas mais curtas primeiro minimiza o tempo de espera das tarefas subsequentes, maximizando a pontuação geral. A complexidade de tempo é dominada pela ordenação, resultando em $\mathcal{O}(N \log N)$. O algoritmo segue os seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Armazenamento de Dados:} Lemos as entradas e armazenamos a duração e o prazo de cada tarefa em um vetor de pares (\texttt{std::pair}), onde o primeiro elemento (\texttt{first}) representa a duração e o segundo (\texttt{second}) representa o deadline.
+    \item \textbf{Estratégia Gulosa (Ordenação):} Utilizamos a função \texttt{sort} nativa da linguagem para ordenar o vetor. Como armazenamos a duração no primeiro elemento do par, a ordenação ocorre automaticamente de forma crescente com base no tempo de execução de cada tarefa.
+    \item \textbf{Cálculo da Recompensa:} Iteramos pelo vetor ordenado mantendo um rastreador do tempo atual percorrido (\texttt{sum}). Para cada tarefa processada, incrementamos o tempo atual com a sua duração e adicionamos à resposta final (\texttt{total}) a recompensa gerada (\texttt{deadline - sum}).
+\end{enumerate}
+
+\newpage
+
+\section{The Smallest String Concatenation (Codeforces - 632C)}
+O problema consiste em receber um conjunto de $N$ strings e determinar qual é a ordem de concatenação de todos os elementos que produz a string resultante lexicograficamente (alfabeticamente) menor possível.
+
+\subsection{Solução}
+A resolução deste problema baseia-se novamente em uma abordagem Gulosa com ordenação customizada, atingindo uma complexidade de $\mathcal{O}(N \log N \cdot L)$, onde $L$ é o tamanho médio das strings. O fluxo de execução obedece aos seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{A Falha da Ordenação Tradicional:} Apenas ordenar as strings alfabeticamente não garante a melhor concatenação. Por exemplo, dadas as strings "a" e "ab", a ordenação alfabética comum as manteria como "a", "ab" (resultado: "aab"). Contudo, a concatenação invertida "ab", "a" gera "aba", que é maior. Precisamos de uma regra de transitividade específica.
+    \item \textbf{Função de Comparação Customizada:} Criamos a função \texttt{cmp(a, b)} que testa o resultado prático da união de duas strings. Ela verifica diretamente se a concatenação \texttt{a + b} é lexicograficamente menor do que \texttt{b + a}. Se for, significa que a string \texttt{a} deve obrigatoriamente preceder a string \texttt{b} na resposta final.
+    \item \textbf{Processamento e Saída:} Fornecemos o vetor de strings e nossa função \texttt{cmp} como parâmetros para o \texttt{std::sort}. Após o vetor estar perfeitamente arranjado de acordo com a nossa regra, basta iterar imprimindo as strings sequencialmente, sem espaços.
+\end{enumerate}
+
+\end{document}
