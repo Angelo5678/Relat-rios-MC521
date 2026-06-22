@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1781737780.50671 "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" "Relatório4.pdf" "Relatório4" 1781737780.89121 0
+["pdflatex"] 1781738139.44848 "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" "Relatório4.pdf" "Relatório4" 1781738139.95809 0
   "/etc/texmf/web2c/texmf.cnf" 1774023749.27586 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" 1781737780.28212 3671 cf812bba6d99144f7518a649e11b60ce ""
+  "/home/angelo/MC521/Relat-rios-MC521/Relatório4/Relatório4.tex" 1781738138.78531 3671 cf812bba6d99144f7518a649e11b60ce ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -85,8 +85,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774023769 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774023824 3347913 a3a4cdcda61affdc186af823ac29dc86 ""
-  "Relatório4.aux" 1781737780.85812 627 e0695b518ed6dfd313cf9a53a51f238b "pdflatex"
-  "Relatório4.tex" 1781737780.28212 3671 cf812bba6d99144f7518a649e11b60ce ""
+  "Relatório4.aux" 1781738139.9124 627 e0695b518ed6dfd313cf9a53a51f238b "pdflatex"
+  "Relatório4.tex" 1781738138.78531 3671 cf812bba6d99144f7518a649e11b60ce ""
   (generated)
   "Relatório4.aux"
   "Relatório4.log"
