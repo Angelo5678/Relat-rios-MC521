@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[portuguese]{babel}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries, 
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numberstyle=\tiny\color{gray}, 
+    frame=single, 
+    breaklines=true, 
+    showstringspaces=false 
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE MC521 - Relatório VII} \\ [2,5em]
+    {\large Júlio da Silva Telles} \\ [1,0em]
+    {\large 22 de Junho de 2026} \\ [1,5em]
+\end{center}
+
+\vspace{1cm} 
+
+\section{A - Vacation (AtCoder - dp\_c)}
+O problema consiste em encontrar a máxima pontuação de felicidade acumulada que pode ser obtida ao longo de $N$ dias de férias, sabendo que a cada dia é possível escolher uma entre três atividades alternativas ($A$, $B$ ou $C$). A única restrição imposta é que não é permitido realizar a mesma atividade em dois dias consecutivos.
+
+\subsection{Solução}
+Podemos resolver este problema utilizando Programação Dinâmica (DP) em uma abordagem \textit{Top-Down} com \textit{Memoization}, garantindo uma complexidade de tempo linear de $\mathcal{O}(N)$. O algoritmo segue os seguintes passos estruturados:
+
+\begin{enumerate}
+    \item \textbf{Base da Recursão:} Quando o índice do dia atinge o limite final estipulado ($i = n$), a função retorna diretamente o peso bruto associado àquela escolha específica (\texttt{w[i][j]}), servindo como ponto de parada do empilhamento recursivo.
+    \item \textbf{Memoização do Estado:} Armazenamos os resultados intermediários calculados em uma matriz bidimensional de soluções (\texttt{sol}). Se o estado correspondente ao dia $i$ e à atividade $j$ já foi computado previamente (\texttt{s[i][j] != 0}), a resposta guardada é retornada instantaneamente, mitigando a redundância de recálculos em subproblemas coincidentes.
+    \item \textbf{Transição entre Estados:} O valor ótimo para o estado corrente \texttt{s[i][j]} é definido pela pontuação do dia atual adicionada ao maior valor retornado pelas opções válidas do dia subsequente. Para evitar repetir a mesma atividade, emprega-se aritmética modular para computar os índices das outras duas ações disponíveis: \texttt{(j + 1) \% 3} e \texttt{(j + 2) \% 3}.
+\end{enumerate}
+
+\subsection{Código Fonte}
+\begin{lstlisting}[language=C++]
+int dp(int i, int j, int n, vector<vi> &w, vector<vi> &s){
+    if (i == n) return w[i][j];
+    if (s[i][j]) return s[i][j];
+    s[i][j] = w[i][j] + max(dp(i + 1, ((j + 1) % 3), n, w, s), dp(i + 1, ((j + 2) % 3), n, w, s));
+    return s[i][j];
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section{E - Maximum Subarray Sum (CSES - 1643)}
+O problema consiste em encontrar a maior soma possível de um subarranjo contíguo e não vazio contido dentro de um vetor unidimensional contendo $N$ números inteiros (que podem ser positivos ou negativos).
+
+\subsection{Solução}
+Podemos modelar e resolver este problema utilizando Programação Dinâmica linear, baseando-se no conceito fundamental do consagrado Algoritmo de Kadane. Essa modelagem nos provê uma complexidade de tempo altamente eficiente de $\mathcal{O}(N)$ e complexidade de espaço de $\mathcal{O}(N)$. O fluxo de execução obedece aos seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Definição do Estado da DP:} Criamos um vetor \texttt{DP} de tamanho $N+1$, inicializando a base \texttt{DP[0] = 0}. Cada posição \texttt{DP[i+1]} armazena a maior soma terminando obrigatoriamente no $i$-ésimo elemento analisado.
+    \item \textbf{Transição e Acúmulo:} Ao iterar pelo vetor de entrada, a equação de recorrência avalia se é mais vantajoso estender o subarranjo acumulado anteriormente ou "reiniciar" a contagem a partir de zero caso a soma se torne prejudicial (negativa): \texttt{DP[i + 1] = max(0LL, DP[i] + w[i])}. A variável global \texttt{maxsum} monitora e retém a crista máxima histórica registrada pelo acumulador ao longo da varredura.
+    \item \textbf{Tratamento de Vetores Estritamente Negativos:} Caso todas as entradas do vetor sejam estritamente negativas, o algoritmo por padrão zeraria o acumulador. Para sanar essa exceção e obedecer à restrição de subarranjos não vazios, controlamos o maior elemento isolado do arranjo através da variável \texttt{maxi}. Se \texttt{maxi <= 0}, a resposta final ótima será unicamente esse maior elemento isolado.
+\end{enumerate}
+
+\subsection{Código Fonte}
+\begin{lstlisting}[language=C++]
+int main(){
+    ll n, maxi = -1e10;
+    cin >> n;
+    vll DP(n + 1, -1e9), w(n);
+    for (int i = 0; i < n; i++)
+        cin >> w[i];
+    DP[0] = 0;
+    ll maxsum =  DP[0];
+    for (int i = 0; i < n; i++){
+        if (w[i] > maxi)
+            maxi = w[i];
+        DP[i + 1] = max(0LL, DP[i] + w[i]);
+        maxsum = max(maxsum, DP[i + 1]);
+    }
+    if (maxi > 0)
+        cout << maxsum << '\n';
+    else 
+        cout << maxi;
+}
+\end{lstlisting}
+
+\end{document}
